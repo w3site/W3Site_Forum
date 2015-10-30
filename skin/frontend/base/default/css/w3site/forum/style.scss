@@ -1,0 +1,142 @@
+/*******************************************************************************
+ * ██╗    ██╗██████╗ ███████╗██╗████████╗███████╗    ██████╗ ██████╗  ██████╗  *
+ * ██║    ██║╚════██╗██╔════╝██║╚══██╔══╝██╔════╝   ██╔═══██╗██╔══██╗██╔════╝  *
+ * ██║ █╗ ██║ █████╔╝███████╗██║   ██║   █████╗     ██║   ██║██████╔╝██║  ███╗ *
+ * ██║███╗██║ ╚═══██╗╚════██║██║   ██║   ██╔══╝     ██║   ██║██╔══██╗██║   ██║ *
+ * ╚███╔███╔╝██████╔╝███████║██║   ██║   ███████╗██╗╚██████╔╝██║  ██║╚██████╔╝ *
+ *  ╚══╝╚══╝ ╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  *
+ *                                                                             *
+ **************************** http://w3site.org/ *******************************
+ **************************Author: Tereta Alexander ****************************
+ * 
+ * W3Site_Forum by Tereta Alexander (w3site.org)
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to tereta@mail.ua so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade extension to newer
+ * versions in the future. If you wish to customize extension for your
+ * needs please refer to http://www.w3site.org for more information.
+ *
+ * @category    W3Site
+ * @package     W3Site_Forum
+ * @copyright   Copyright (c) 2015-2016 Tereta Alexander. (http://www.w3site.org)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+.forum-index-index, .forum-subject-list, .forum-subject-view, .forum-message-edit, .forum-subject-edit{
+    .w3forum{
+        &_form{
+            display: block;
+            padding: 10px;
+            background-color: #ddd;
+            
+            input[type=text]{
+                width: 100%;
+            }
+            
+            input[type=submit]{
+                padding: 5px;
+            }
+            
+            textarea{
+                width: 100%;
+                min-width: 100%;
+                min-height: 75px;
+            }
+            
+            .controlBlock{
+                padding: 10px;
+                
+                text-align: right;
+                
+                .leftButtons{
+                    float: left;
+                }
+            }
+        }
+        
+        &_heading{
+            margin-bottom: 5em;
+            
+            .author_name{
+                color: #07c;
+            }
+            
+            .editButton{
+                float: right;
+                margin-right: 10px;
+            }
+        }
+        
+        &_item{
+            margin: 0px 0px 10px 0px;
+            clear: both;
+            display: block;
+            margin: 0px;
+            padding: 5px 10px 20px 10px;
+            
+            &:nth-child(odd){
+                background-color: #eee;
+            }
+            
+            .author_name{
+                color: #07c;
+            }
+            
+            .message{
+                margin: 0px;
+            }
+            
+            .editButton{
+                float: right;
+            }
+            
+            .title{
+                display: block;
+                font-weight: bold;
+                font-size: 1.4em;
+            }
+            
+            .description{
+                display: block;
+                
+                &.restricted{
+                    max-height: 40px;
+                    overflow: hidden;
+                }
+            }
+            
+            .author_name{
+                clear:both;
+            }
+        }
+        
+        &_itemNotFound{
+            
+        }
+        
+        &_answersLabel{
+            background-color: #000;
+            color: #eee;
+            padding: 0px 10px;
+            font-weight: bold;
+        }
+    }
+    
+    .messageEdit{
+        clear:both;
+        display: block;
+        padding: 10px;
+        background-color: #ddd;
+    }
+}
+

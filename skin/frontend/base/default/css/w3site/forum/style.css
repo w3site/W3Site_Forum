@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*******************************************************************************
+ * ██╗    ██╗██████╗ ███████╗██╗████████╗███████╗    ██████╗ ██████╗  ██████╗  *
+ * ██║    ██║╚════██╗██╔════╝██║╚══██╔══╝██╔════╝   ██╔═══██╗██╔══██╗██╔════╝  *
+ * ██║ █╗ ██║ █████╔╝███████╗██║   ██║   █████╗     ██║   ██║██████╔╝██║  ███╗ *
+ * ██║███╗██║ ╚═══██╗╚════██║██║   ██║   ██╔══╝     ██║   ██║██╔══██╗██║   ██║ *
+ * ╚███╔███╔╝██████╔╝███████║██║   ██║   ███████╗██╗╚██████╔╝██║  ██║╚██████╔╝ *
+ *  ╚══╝╚══╝ ╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  *
+ *                                                                             *
+ **************************** http://w3site.org/ *******************************
+ **************************Author: Tereta Alexander ****************************
+ * 
+ * W3Site_Forum by Tereta Alexander (w3site.org)
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to tereta@mail.ua so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade extension to newer
+ * versions in the future. If you wish to customize extension for your
+ * needs please refer to http://www.w3site.org for more information.
+ *
+ * @category    W3Site
+ * @package     W3Site_Forum
+ * @copyright   Copyright (c) 2015-2016 Tereta Alexander. (http://www.w3site.org)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+.forum-index-index .w3forum_form, .forum-subject-list .w3forum_form, .forum-subject-view .w3forum_form, .forum-message-edit .w3forum_form, .forum-subject-edit .w3forum_form {
+  display: block;
+  padding: 10px;
+  background-color: #ddd; }
+  .forum-index-index .w3forum_form input[type=text], .forum-subject-list .w3forum_form input[type=text], .forum-subject-view .w3forum_form input[type=text], .forum-message-edit .w3forum_form input[type=text], .forum-subject-edit .w3forum_form input[type=text] {
+    width: 100%; }
+  .forum-index-index .w3forum_form input[type=submit], .forum-subject-list .w3forum_form input[type=submit], .forum-subject-view .w3forum_form input[type=submit], .forum-message-edit .w3forum_form input[type=submit], .forum-subject-edit .w3forum_form input[type=submit] {
+    padding: 5px; }
+  .forum-index-index .w3forum_form textarea, .forum-subject-list .w3forum_form textarea, .forum-subject-view .w3forum_form textarea, .forum-message-edit .w3forum_form textarea, .forum-subject-edit .w3forum_form textarea {
+    width: 100%;
+    min-width: 100%;
+    min-height: 75px; }
+  .forum-index-index .w3forum_form .controlBlock, .forum-subject-list .w3forum_form .controlBlock, .forum-subject-view .w3forum_form .controlBlock, .forum-message-edit .w3forum_form .controlBlock, .forum-subject-edit .w3forum_form .controlBlock {
+    padding: 10px;
+    text-align: right; }
+    .forum-index-index .w3forum_form .controlBlock .leftButtons, .forum-subject-list .w3forum_form .controlBlock .leftButtons, .forum-subject-view .w3forum_form .controlBlock .leftButtons, .forum-message-edit .w3forum_form .controlBlock .leftButtons, .forum-subject-edit .w3forum_form .controlBlock .leftButtons {
+      float: left; }
+.forum-index-index .w3forum_heading, .forum-subject-list .w3forum_heading, .forum-subject-view .w3forum_heading, .forum-message-edit .w3forum_heading, .forum-subject-edit .w3forum_heading {
+  margin-bottom: 5em; }
+  .forum-index-index .w3forum_heading .author_name, .forum-subject-list .w3forum_heading .author_name, .forum-subject-view .w3forum_heading .author_name, .forum-message-edit .w3forum_heading .author_name, .forum-subject-edit .w3forum_heading .author_name {
+    color: #07c; }
+  .forum-index-index .w3forum_heading .editButton, .forum-subject-list .w3forum_heading .editButton, .forum-subject-view .w3forum_heading .editButton, .forum-message-edit .w3forum_heading .editButton, .forum-subject-edit .w3forum_heading .editButton {
+    float: right;
+    margin-right: 10px; }
+.forum-index-index .w3forum_item, .forum-subject-list .w3forum_item, .forum-subject-view .w3forum_item, .forum-message-edit .w3forum_item, .forum-subject-edit .w3forum_item {
+  margin: 0px 0px 10px 0px;
+  clear: both;
+  display: block;
+  margin: 0px;
+  padding: 5px 10px 20px 10px; }
+  .forum-index-index .w3forum_item:nth-child(odd), .forum-subject-list .w3forum_item:nth-child(odd), .forum-subject-view .w3forum_item:nth-child(odd), .forum-message-edit .w3forum_item:nth-child(odd), .forum-subject-edit .w3forum_item:nth-child(odd) {
+    background-color: #eee; }
+  .forum-index-index .w3forum_item .author_name, .forum-subject-list .w3forum_item .author_name, .forum-subject-view .w3forum_item .author_name, .forum-message-edit .w3forum_item .author_name, .forum-subject-edit .w3forum_item .author_name {
+    color: #07c; }
+  .forum-index-index .w3forum_item .message, .forum-subject-list .w3forum_item .message, .forum-subject-view .w3forum_item .message, .forum-message-edit .w3forum_item .message, .forum-subject-edit .w3forum_item .message {
+    margin: 0px; }
+  .forum-index-index .w3forum_item .editButton, .forum-subject-list .w3forum_item .editButton, .forum-subject-view .w3forum_item .editButton, .forum-message-edit .w3forum_item .editButton, .forum-subject-edit .w3forum_item .editButton {
+    float: right; }
+  .forum-index-index .w3forum_item .title, .forum-subject-list .w3forum_item .title, .forum-subject-view .w3forum_item .title, .forum-message-edit .w3forum_item .title, .forum-subject-edit .w3forum_item .title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.4em; }
+  .forum-index-index .w3forum_item .description, .forum-subject-list .w3forum_item .description, .forum-subject-view .w3forum_item .description, .forum-message-edit .w3forum_item .description, .forum-subject-edit .w3forum_item .description {
+    display: block; }
+    .forum-index-index .w3forum_item .description.restricted, .forum-subject-list .w3forum_item .description.restricted, .forum-subject-view .w3forum_item .description.restricted, .forum-message-edit .w3forum_item .description.restricted, .forum-subject-edit .w3forum_item .description.restricted {
+      max-height: 40px;
+      overflow: hidden; }
+  .forum-index-index .w3forum_item .author_name, .forum-subject-list .w3forum_item .author_name, .forum-subject-view .w3forum_item .author_name, .forum-message-edit .w3forum_item .author_name, .forum-subject-edit .w3forum_item .author_name {
+    clear: both; }
+.forum-index-index .w3forum_answersLabel, .forum-subject-list .w3forum_answersLabel, .forum-subject-view .w3forum_answersLabel, .forum-message-edit .w3forum_answersLabel, .forum-subject-edit .w3forum_answersLabel {
+  background-color: #000;
+  color: #eee;
+  padding: 0px 10px;
+  font-weight: bold; }
+.forum-index-index .messageEdit, .forum-subject-list .messageEdit, .forum-subject-view .messageEdit, .forum-message-edit .messageEdit, .forum-subject-edit .messageEdit {
+  clear: both;
+  display: block;
+  padding: 10px;
+  background-color: #ddd; }
+
+/*# sourceMappingURL=style.css.map */

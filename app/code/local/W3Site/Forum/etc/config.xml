@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <W3Site_Forum>
+            <version>0.0.4</version>
+        </W3Site_Forum>
+    </modules>
+    
+    <default>
+        <w3site_forum>
+            <index>
+                <title>Forum</title>
+            </index>
+        </w3site_forum>
+    </default>
+    
+    <global>
+        <blocks>
+            <w3site_forum>
+                <class>W3Site_Forum_Block</class>
+            </w3site_forum>
+        </blocks>
+        
+        <models>
+            <w3site_forum>
+                <class>W3Site_Forum_Model</class>
+                <resourceModel>w3site_forum_resource</resourceModel>
+            </w3site_forum>
+            
+            <w3site_forum_resource>
+                <class>W3Site_Forum_Model_Resource</class>
+                <entities>
+                    <forum>
+                        <table>w3site_forum</table>
+                    </forum>
+                    <subject>
+                        <table>w3site_forum_subject</table>
+                    </subject>
+                    <message>
+                        <table>w3site_forum_message</table>
+                    </message>
+                </entities>
+            </w3site_forum_resource>
+        </models>
+        
+        <resources>
+            <forum_setup>
+                <setup>
+                    <module>W3Site_Forum</module>
+                    <class>W3Site_Forum_Model_Resource_Setup</class>
+                </setup>
+            </forum_setup>
+        </resources>
+        
+        <helpers>
+            <w3site_forum>
+                <class>W3Site_Forum_Helper</class>
+            </w3site_forum>
+        </helpers>
+        
+        <template>
+            <email>
+                <w3site_forum_subject_notification module="W3Site_Forum">
+                    <label>Notification for admin about created subject</label>
+                    <file>w3site/forum/subject_notification.html</file>
+                    <type>html</type>
+                </w3site_forum_subject_notification>
+                <w3site_forum_message_notification module="W3Site_Forum">
+                    <label>Notification for admin about created message</label>
+                    <file>w3site/forum/message_notification.html</file>
+                    <type>html</type>
+                </w3site_forum_message_notification>
+            </email>
+        </template>
+    </global>
+    
+    <frontend>
+        <routers>
+            <forum>
+                <use>standard</use>
+                <args>
+                    <module>W3Site_Forum</module>
+                    <frontName>forum</frontName>
+                </args>
+            </forum>
+        </routers>
+        
+        <layout>
+            <updates>
+                <w3site_forum>
+                    <file>w3site/forum.xml</file>
+                </w3site_forum>
+            </updates>
+        </layout>
+        
+        <translate>
+            <modules>
+                <W3Site_Forum>
+                    <files>
+                        <default>W3Site_Forum.csv</default>
+                    </files>
+                </W3Site_Forum>
+            </modules>
+        </translate>
+    </frontend>
+    
+    <adminhtml>
+        <menu>
+            <w3site_forum translate="title" module="w3site_forum">
+                <title>Forum</title>
+                <sort_order>50</sort_order>
+                <children>
+                    <w3site_forum_list translate="title" module="w3site_forum">
+                        <title>Forums</title>
+                        <sort_order>1</sort_order>
+                        <action>adminhtml/forum/list</action>
+                    </w3site_forum_list>
+                    <w3site_forum_subjects translate="title" module="w3site_forum">
+                        <title>Subjects</title>
+                        <sort_order>10</sort_order>
+                        <action>adminhtml/forum/subject</action>
+                    </w3site_forum_subjects>
+                    <w3site_forum_messages translate="title" module="w3site_forum">
+                        <title>Messages</title>
+                        <sort_order>20</sort_order>
+                        <action>adminhtml/forum/message</action>
+                    </w3site_forum_messages>
+                </children>
+            </w3site_forum>
+        </menu>
+        
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <w3site_forum translate="title">
+                            <title>Forum</title>
+                        </w3site_forum>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <w3site_forum>
+                                            <title>Forum</title>
+                                        </w3site_forum>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        
+        <translate>
+            <modules>
+                <W3Site_Forum>
+                    <files>
+                        <default>W3Site_Forum.csv</default>
+                    </files>
+                </W3Site_Forum>
+            </modules>
+        </translate>
+    </adminhtml>
+    
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <w3site_forum before="Mage_Adminhtml">W3Site_Forum_Adminhtml</w3site_forum>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

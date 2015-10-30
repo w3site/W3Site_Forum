@@ -1,0 +1,16 @@
+<form class="w3forum_form" action="<?php echo Mage::helper('w3site_forum')->getUrl('forum/message/editPost', array('id'=>$this->getId())) ?>" method="post">
+    <div class="labelMessage">
+        <?php echo $this->__('Message') ?>:
+    </div>
+    <div>
+        <textarea name="message"><?php echo $this->getMessage() ?></textarea>
+    </div>
+    <div class="controlBlock">
+        <div class="leftButtons">
+            <a href="<?php echo Mage::helper('w3site_forum')->getUrl('forum/subject/view', array('id' => $this->getSubjectId())) ?>"><?php echo $this->__('Back') ?></a>
+        </div>
+        
+        <input type="hidden" name="id" value="<?php echo $this->getSubjectId() ?>" />
+        <input type="submit" value="<?php echo $this->__('Save') ?>" />
+    </div>
+</form>
