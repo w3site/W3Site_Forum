@@ -55,6 +55,10 @@ class W3Site_Forum_Adminhtml_ForumController extends Mage_Adminhtml_Controller_A
         $this->renderLayout();
     }
     
+    public function supportAction(){
+        $this->_redirectUrl('http://w3site.org/answers/w3site_forum/');
+    }
+    
     public function editAction(){
         $request = $this->getRequest();
         

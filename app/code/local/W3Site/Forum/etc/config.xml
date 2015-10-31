@@ -125,6 +125,11 @@
                         <sort_order>20</sort_order>
                         <action>adminhtml/forum/message</action>
                     </w3site_forum_messages>
+                    <w3site_forum_support translate="title" module="w3site_forum">
+                        <title>Support</title>
+                        <sort_order>100</sort_order>
+                        <action>adminhtml/forum/support</action>
+                    </w3site_forum_support>
                 </children>
             </w3site_forum>
         </menu>

@@ -74,7 +74,7 @@ class W3Site_Forum_Model_Forum extends Mage_Core_Model_Abstract
             $forumUrl = 'forum';
         }
         
-        $idPath = 'forum/subject/view/id/' . $this->getId();
+        $idPath = 'forum/subject/list/id/' . $this->getId();
         $rewrite = Mage::getModel("core/url_rewrite")->loadByIdPath($idPath);
         
         if ($rewrite->getUrlRewriteId()){
