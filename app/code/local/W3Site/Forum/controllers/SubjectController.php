@@ -42,6 +42,16 @@
  */
 class W3Site_Forum_SubjectController extends Mage_Core_Controller_Front_Action
 {
+    protected function _redirectRewriteUrl($currentRewrite){
+        $parsedCurrentUrl = parse_url(Mage::helper('core/url')->getCurrentUrl());
+        $currentUrl = $parsedCurrentUrl['scheme'] . '://' . $parsedCurrentUrl['host'] . $parsedCurrentUrl['path'];
+        
+        if ($currentRewrite != $currentUrl){
+            $this->_redirectUrl($currentRewrite . ($parsedCurrentUrl['query'] ? '?' . $parsedCurrentUrl['query'] : ''));
+            return true;
+        }
+    }
+    
     public function listAction(){
         $request = $this->getRequest();
         $this->loadLayout();
@@ -50,8 +60,8 @@ class W3Site_Forum_SubjectController extends Mage_Core_Controller_Front_Action
         $forumId = $request->getParam('id');
         
         $currentRewrite = Mage::helper('w3site_forum')->getUrl('forum/subject/list/id/' . $forumId);
-        if ($currentRewrite != Mage::helper('core/url')->getCurrentUrl()){
-            $this->_redirectUrl($currentRewrite);
+        
+        if ($this->_redirectRewriteUrl($currentRewrite)){
             return;
         }
         
@@ -95,6 +105,11 @@ class W3Site_Forum_SubjectController extends Mage_Core_Controller_Front_Action
     public function viewAction(){
         $subjectId = $this->getRequest()->getParam('id');
         
+        $currentRewrite = Mage::helper('w3site_forum')->getUrl('forum/subject/view/id/' . $subjectId);
+        if ($this->_redirectRewriteUrl($currentRewrite)){
+            return;
+        }
+        
         $this->loadLayout();
         
         if (!Mage::getSingleton('customer/session')->isLoggedIn()){
@@ -132,7 +147,9 @@ class W3Site_Forum_SubjectController extends Mage_Core_Controller_Front_Action
             $this->getLayout()->getBlock('head')->setTitle($subjectModel->getTitle());
             
             $messagesCollection = Mage::getModel('w3site_forum/message')->getCollection();
-            $messagesCollection->addFieldToFilter('subject_id', $subjectId);
+            $messagesCollection->addFieldToFilter('subject_id', $subjectId)
+                    ->setOrder('updated', 'DESC');
+
             $viewSubjectBlock->setMessagesCollection($messagesCollection);
             
             $this->renderLayout();

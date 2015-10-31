@@ -2,7 +2,7 @@
 <config>
     <modules>
         <W3Site_Forum>
-            <version>0.0.4</version>
+            <version>0.0.5</version>
         </W3Site_Forum>
     </modules>
     
@@ -44,12 +44,12 @@
         </models>
         
         <resources>
-            <forum_setup>
+            <w3site_forum_setup>
                 <setup>
                     <module>W3Site_Forum</module>
                     <class>W3Site_Forum_Model_Resource_Setup</class>
                 </setup>
-            </forum_setup>
+            </w3site_forum_setup>
         </resources>
         
         <helpers>

@@ -48,6 +48,8 @@ class W3Site_Forum_Block_Admin_Message_Edit extends Mage_Adminhtml_Block_Widget_
         $this->_blockGroup = 'w3site_forum';
         $this->_controller = 'admin_message';
         $this->_headerText = Mage::helper('w3site_forum')->__('Edit Message');
+        
+        $this->_removeButton('reset');
     }
     
     public function getBackUrl()

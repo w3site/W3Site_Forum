@@ -47,6 +47,16 @@ class W3Site_Forum_Model_Message extends Mage_Core_Model_Abstract
         $this->_init('w3site_forum/message');
     }
     
+    protected function _beforeSave() {
+        if (!$this->getId()){
+            $this->setCreated(date('Y-m-d H:i:s'));
+        }
+        
+        $this->setUpdated(date('Y-m-d H:i:s'));
+        
+        parent::_beforeSave();
+    }
+    
     public function isEditable(){
         $customerData = Mage::getSingleton('customer/session')->getCustomer();
         $customerId = $customerData->getId();

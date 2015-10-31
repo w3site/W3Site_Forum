@@ -46,8 +46,8 @@ class W3Site_Forum_Block_Admin_Forum_List_Grid extends Mage_Adminhtml_Block_Widg
     {
         parent::__construct();
         $this->setId('w3site_forum_list_grid');
-        $this->setDefaultSort('id');
-        $this->setDefaultDir('DESC');
+        $this->setDefaultSort('position');
+        $this->setDefaultDir('ASC');
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(false);
     }
@@ -79,6 +79,12 @@ class W3Site_Forum_Block_Admin_Forum_List_Grid extends Mage_Adminhtml_Block_Widg
         $this->addColumn('description', array(
             'header' => $helper->__('Description'),
             'index'  => 'description'
+        ));
+        
+        $this->addColumn('position', array(
+            'header' => $helper->__('Position'),
+            'index'  => 'position',
+            'width' => '50px',
         ));
         
         return parent::_prepareColumns();

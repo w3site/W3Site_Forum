@@ -48,6 +48,8 @@ class W3Site_Forum_Block_Admin_Subject_Edit extends Mage_Adminhtml_Block_Widget_
         $this->_blockGroup = 'w3site_forum';
         $this->_controller = 'admin_subject';
         $this->_headerText = Mage::helper('w3site_forum')->__('Edit Subject');
+        
+        $this->_removeButton('reset');
     }
     
     public function getBackUrl()

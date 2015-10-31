@@ -41,15 +41,31 @@
  * @author     Teretea Alexander <tereta@mail.ua>
  */
 class W3Site_Forum_Block_Subject_List extends Mage_Core_Block_Template{
+    protected $_collection = null;
+    protected $_page = 1;
+    
     public function _construct(){
         $this->setTemplate('w3site/forum/subject.phtml');
     }
     
-    public function getList(){
+    protected function _toHtml(){
+        if ($toolbarPagerBlock = $this->getChild('toolbar_pager')){
+            $toolbarPagerBlock->setCollection($this->getCollection());
+        }
+        return parent::_toHtml();
+    }
+    
+    public function getCollection(){
+        if ($this->_collection){
+            return $this->_collection;
+        }
+        
         $forumId = $this->getForumId();
         $subjectCollection = Mage::getModel('w3site_forum/subject')->getCollection();
         $subjectCollection->addFieldToFilter('forum_id', $forumId);
-        return $subjectCollection;
+        $subjectCollection->setOrder('updated', 'DESC');
+        
+        return $this->_collection = $subjectCollection;
     }
 }
 ?>

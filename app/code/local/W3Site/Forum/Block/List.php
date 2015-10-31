@@ -47,6 +47,7 @@ class W3Site_Forum_Block_List extends Mage_Core_Block_Template{
     
     public function getList(){
         $subjectCollection = Mage::getModel('w3site_forum/forum')->getCollection();
+        $subjectCollection->setOrder('position', 'ASC');
         return $subjectCollection;
     }
 }

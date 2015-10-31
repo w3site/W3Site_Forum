@@ -10,14 +10,18 @@
     <forum_subject_list>
         <update handle="FORUM_COMMON_CONFIGURATION" /> 
         <reference name="content">
-            <block type="w3site_forum/subject_list" name="w3site_forum_subject_list" />
+            <block type="w3site_forum/subject_list" name="w3site_forum_subject_list">
+                <block type="page/html_pager" name="toolbar_pager" as="toolbar_pager" />
+            </block>
         </reference>
     </forum_subject_list>
     
     <forum_subject_view>
         <update handle="FORUM_COMMON_CONFIGURATION" /> 
         <reference name="content">
-            <block type="w3site_forum/subject_view" name="w3site_forum_subject_view" />
+            <block type="w3site_forum/subject_view" name="w3site_forum_subject_view">
+                <block type="page/html_pager" name="toolbar_pager" as="toolbar_pager" />
+            </block>
         </reference>
     </forum_subject_view>
     

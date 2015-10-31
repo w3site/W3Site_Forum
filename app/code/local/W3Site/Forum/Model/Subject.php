@@ -76,6 +76,16 @@ class W3Site_Forum_Model_Subject extends Mage_Core_Model_Abstract
         return $_loadedAuthors[$customerId] = $authorModel;
     }
     
+    protected function _beforeSave() {
+        if (!$this->getId()){
+            $this->setCreated(date('Y-m-d H:i:s'));
+        }
+        
+        $this->setUpdated(date('Y-m-d H:i:s'));
+        
+        parent::_beforeSave();
+    }
+    
     protected function _afterSave() {
         $rewriteForum = Mage::getModel("core/url_rewrite")->loadByIdPath('forum/subject/list/id/' . $this->getForumId());
         $forumUrl = $rewriteForum->getRequestPath();
@@ -96,7 +106,11 @@ class W3Site_Forum_Model_Subject extends Mage_Core_Model_Abstract
             ->setTargetPath($idPath)
             ->setOptions();
         
-        $url = $forumUrl . '/' . Mage::helper('w3site_forum')->prepareUrl($this->getTitle());
+        if (!$preparedUrlPart = trim(Mage::helper('w3site_forum')->prepareUrl($this->getTitle()))){
+            $preparedUrlPart = uniqId();
+        }
+        
+        $url = $forumUrl . '/' . $preparedUrlPart;
         
         $reservedRewrite = Mage::getModel("core/url_rewrite")->setStoreId(1)->loadByRequestPath($url);
         if ($reservedRewrite->getUrlRewriteId() && $reservedRewrite->getUrlRewriteId() != $rewrite->getUrlRewriteId()){

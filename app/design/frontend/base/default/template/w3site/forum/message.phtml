@@ -48,7 +48,7 @@
     </p>
 </div>
 
-<?php if ($this->getMessages()->count()) : ?>
+<?php if ($this->getMessagesCollection()->count()) : ?>
     <div class="w3forum_answersLabel">
         <?php echo $this->__('Answers') ?>:
     </div>
@@ -56,7 +56,7 @@
     <div class="w3forum_itemNotFound">No messages found</div>
 <?php endif ?>
 
-<?php foreach($this->getMessages() as $item) : ?>
+<?php foreach($this->getMessagesCollection() as $item) : ?>
     <div class="w3forum_item">
         <div class="author_name"><?php echo $item->getAuthor()->getName() ?></div>
         <?php if ($item->isEditable()) : ?>
@@ -67,6 +67,10 @@
         <div class="message"><?php echo $this->helper('w3site_forum')->prepareText($item->getMessage()) ?></div>
     </div>
 <?php endforeach ?>
+    
+<div class="w3forum_pagination_wrapper">
+    <?php echo $this->getChildHtml('toolbar_pager') ?>
+</div>
 
 <?php if(Mage::getSingleton('customer/session')->isLoggedIn()) : ?>
     <form class="w3forum_form" action="<?php echo Mage::helper('w3site_forum')->getUrl('forum/message/editPost') ?>" method="post">

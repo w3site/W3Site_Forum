@@ -49,6 +49,8 @@ class W3Site_Forum_Block_Admin_Forum_Edit extends Mage_Adminhtml_Block_Widget_Fo
         $this->_controller = 'admin_forum';
         //$this->_mode = 'forum';
         $this->_headerText = Mage::helper('w3site_forum')->__('Edit Forum');
+        
+        $this->_removeButton('reset');
     }
     
     public function getBackUrl()

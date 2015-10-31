@@ -67,6 +67,7 @@ class W3Site_Forum_Adminhtml_ForumController extends Mage_Adminhtml_Controller_A
         if ($request->getPost()){
             $forumModel->setData('title', $request->getPost('title'));
             $forumModel->setData('description', $request->getPost('description'));
+            $forumModel->setData('position', $request->getPost('position'));
             $forumModel->save();
             
             Mage::getSingleton('core/session')->addSuccess("Forum has been saved"); 

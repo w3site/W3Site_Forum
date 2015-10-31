@@ -87,6 +87,13 @@ class W3Site_Forum_Block_Admin_Forum_Edit_Form extends Mage_Adminhtml_Block_Widg
             'label' => $helper->__('Description'),
         ));
         
+        $fieldset->addField('position', 'text', array(
+            'class'     => '',
+            'required'  => false,
+            'name' => 'position',
+            'label' => $helper->__('Position'),
+        ));
+        
         $form->setValues($forumModel->getData());
         
         return parent::_prepareForm();

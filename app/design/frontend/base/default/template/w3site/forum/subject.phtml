@@ -35,18 +35,22 @@
 ?>
 <h1><?php echo $this->getForumModel()->getTitle() ?></h1>
 
-<?php if ($this->getList()->count()  == 0) : ?>
+<?php if ($this->getCollection()->count()  == 0) : ?>
     <div class="w3forum_itemNotFound">
         <?php echo $this->__('Your subject will be first') ?>
     </div>
 <?php endif ?>
-<?php foreach($this->getList() as $item) : ?>
+<?php foreach($this->getCollection() as $item) : ?>
     <div class="w3forum_item">
         <a class="title" href="<?php echo Mage::helper('w3site_forum')->getUrl('forum/subject/view/id/' . $item->getId()) ?>"><?php echo $item->getTitle() ?></a>
         <div class="author_name"><?php echo $item->getAuthor()->getName() ?></div>
         <div class="description restricted"><?php echo $this->helper('w3site_forum')->prepareText($item->getDescription(), 380) ?></div>
     </div>
 <?php endforeach ?>
+
+<div class="w3forum_pagination_wrapper">
+    <?php echo $this->getChildHtml('toolbar_pager') ?>
+</div>
 
 <?php if(Mage::getSingleton('customer/session')->isLoggedIn()) : ?>
     <form class="w3forum_form" action="<?php echo Mage::helper('w3site_forum')->getUrl('forum/subject/editPost') ?>" method="post">
@@ -71,6 +75,7 @@
                 <textarea name="description"></textarea>
             </div>
         </div>
+        
         <div class="controlBlock">
             <div class="leftButtons">
                 <a href="<?php echo Mage::helper('w3site_forum')->getUrl('forum') ?>"><?php echo $this->__('Back') ?></a>

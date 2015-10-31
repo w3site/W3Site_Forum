@@ -57,7 +57,7 @@ class W3Site_Forum_Block_Subject_View extends Mage_Core_Block_Template{
         $this->_messages = $messagesCollection;
     }
     
-    public function getMessages(){
+    public function getMessagesCollection(){
         return $this->_messages;
     }
     
@@ -96,6 +96,10 @@ class W3Site_Forum_Block_Subject_View extends Mage_Core_Block_Template{
     protected function _toHtml(){
         $subjectModel = $this->getSubjectModel();
         $this->addData($subjectModel->getData());
+        
+        if ($toolbarPagerBlock = $this->getChild('toolbar_pager')){
+            $toolbarPagerBlock->setCollection($this->getMessagesCollection());
+        }
         
         return parent::_toHtml();
     }
