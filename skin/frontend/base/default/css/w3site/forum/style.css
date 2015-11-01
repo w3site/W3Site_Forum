@@ -55,6 +55,9 @@
   margin-bottom: 5em; }
   .forum-index-index .w3forum_heading .author_name, .forum-subject-list .w3forum_heading .author_name, .forum-subject-view .w3forum_heading .author_name, .forum-message-edit .w3forum_heading .author_name, .forum-subject-edit .w3forum_heading .author_name {
     color: #07c; }
+  .forum-index-index .w3forum_heading .modified, .forum-subject-list .w3forum_heading .modified, .forum-subject-view .w3forum_heading .modified, .forum-message-edit .w3forum_heading .modified, .forum-subject-edit .w3forum_heading .modified {
+    float: right;
+    font-size: 10px; }
   .forum-index-index .w3forum_heading .editButton, .forum-subject-list .w3forum_heading .editButton, .forum-subject-view .w3forum_heading .editButton, .forum-message-edit .w3forum_heading .editButton, .forum-subject-edit .w3forum_heading .editButton {
     float: right;
     margin-right: 10px; }
@@ -67,7 +70,8 @@
   .forum-index-index .w3forum_item:nth-child(odd), .forum-subject-list .w3forum_item:nth-child(odd), .forum-subject-view .w3forum_item:nth-child(odd), .forum-message-edit .w3forum_item:nth-child(odd), .forum-subject-edit .w3forum_item:nth-child(odd) {
     background-color: #eee; }
   .forum-index-index .w3forum_item .author_name, .forum-subject-list .w3forum_item .author_name, .forum-subject-view .w3forum_item .author_name, .forum-message-edit .w3forum_item .author_name, .forum-subject-edit .w3forum_item .author_name {
-    color: #07c; }
+    color: #07c;
+    clear: both; }
   .forum-index-index .w3forum_item .message, .forum-subject-list .w3forum_item .message, .forum-subject-view .w3forum_item .message, .forum-message-edit .w3forum_item .message, .forum-subject-edit .w3forum_item .message {
     margin: 0px; }
   .forum-index-index .w3forum_item .editButton, .forum-subject-list .w3forum_item .editButton, .forum-subject-view .w3forum_item .editButton, .forum-message-edit .w3forum_item .editButton, .forum-subject-edit .w3forum_item .editButton {
@@ -81,8 +85,9 @@
     .forum-index-index .w3forum_item .description.restricted, .forum-subject-list .w3forum_item .description.restricted, .forum-subject-view .w3forum_item .description.restricted, .forum-message-edit .w3forum_item .description.restricted, .forum-subject-edit .w3forum_item .description.restricted {
       max-height: 40px;
       overflow: hidden; }
-  .forum-index-index .w3forum_item .author_name, .forum-subject-list .w3forum_item .author_name, .forum-subject-view .w3forum_item .author_name, .forum-message-edit .w3forum_item .author_name, .forum-subject-edit .w3forum_item .author_name {
-    clear: both; }
+  .forum-index-index .w3forum_item .modified, .forum-subject-list .w3forum_item .modified, .forum-subject-view .w3forum_item .modified, .forum-message-edit .w3forum_item .modified, .forum-subject-edit .w3forum_item .modified {
+    float: right;
+    font-size: 10px; }
 .forum-index-index .w3forum_answersLabel, .forum-subject-list .w3forum_answersLabel, .forum-subject-view .w3forum_answersLabel, .forum-message-edit .w3forum_answersLabel, .forum-subject-edit .w3forum_answersLabel {
   background-color: #000;
   color: #eee;

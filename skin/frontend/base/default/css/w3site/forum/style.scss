@@ -75,6 +75,11 @@
                 color: #07c;
             }
             
+            .modified{
+                float: right;
+                font-size: 10px;
+            }
+            
             .editButton{
                 float: right;
                 margin-right: 10px;
@@ -94,6 +99,7 @@
             
             .author_name{
                 color: #07c;
+                clear:both;
             }
             
             .message{
@@ -119,8 +125,9 @@
                 }
             }
             
-            .author_name{
-                clear:both;
+            .modified{
+                float: right;
+                font-size: 10px;
             }
         }
         

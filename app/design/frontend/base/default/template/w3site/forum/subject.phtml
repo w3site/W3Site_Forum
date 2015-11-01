@@ -40,11 +40,21 @@
         <?php echo $this->__('Your subject will be first') ?>
     </div>
 <?php endif ?>
+
 <?php foreach($this->getCollection() as $item) : ?>
     <div class="w3forum_item">
         <a class="title" href="<?php echo Mage::helper('w3site_forum')->getUrl('forum/subject/view/id/' . $item->getId()) ?>"><?php echo $item->getTitle() ?></a>
         <div class="author_name"><?php echo $item->getAuthor()->getName() ?></div>
         <div class="description restricted"><?php echo $this->helper('w3site_forum')->prepareText($item->getDescription(), 380) ?></div>
+        <?php if ($item->getUpdated()) : ?>
+            <div class="modified">
+                <?php if ($item->getUpdated() == $item->getCreated()) : ?>
+                    <?php echo $this->__('Created at') ?>: <?php echo Mage::helper('core')->formatTime($item->getUpdated(), Mage_Core_Model_Locale::FORMAT_TYPE_SHORT, true) ?>
+                <?php else : ?>
+                    <?php echo $this->__('Modified at') ?>: <?php echo Mage::helper('core')->formatTime($item->getUpdated(), Mage_Core_Model_Locale::FORMAT_TYPE_SHORT, true) ?>
+                <?php endif ?>
+            </div>
+        <?php endif ?>
     </div>
 <?php endforeach ?>
 
