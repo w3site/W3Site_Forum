@@ -51,6 +51,10 @@
       float: left; }
 .forum-index-index .w3forum_pagination_wrapper, .forum-subject-list .w3forum_pagination_wrapper, .forum-subject-view .w3forum_pagination_wrapper, .forum-message-edit .w3forum_pagination_wrapper, .forum-subject-edit .w3forum_pagination_wrapper {
   padding: 10px 0px; }
+  .forum-index-index .w3forum_pagination_wrapper:after, .forum-subject-list .w3forum_pagination_wrapper:after, .forum-subject-view .w3forum_pagination_wrapper:after, .forum-message-edit .w3forum_pagination_wrapper:after, .forum-subject-edit .w3forum_pagination_wrapper:after {
+    content: "";
+    clear: both;
+    display: inline-block; }
 .forum-index-index .w3forum_heading, .forum-subject-list .w3forum_heading, .forum-subject-view .w3forum_heading, .forum-message-edit .w3forum_heading, .forum-subject-edit .w3forum_heading {
   margin-bottom: 5em; }
   .forum-index-index .w3forum_heading .author_name, .forum-subject-list .w3forum_heading .author_name, .forum-subject-view .w3forum_heading .author_name, .forum-message-edit .w3forum_heading .author_name, .forum-subject-edit .w3forum_heading .author_name {
